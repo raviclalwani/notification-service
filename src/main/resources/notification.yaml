@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: Notification Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:9091
+paths:
+  /notifications:
+    post:
+      summary: Send a notification for budget exceedance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationRequest'
+      responses:
+        '201':
+          description: Notification sent
+components:
+  schemas:
+    NotificationRequest:
+      type: object
+      required:
+        - budgetCategory
+        - budgetAmount
+        - expenseDescription
+        - expenseAmount
+      properties:
+        budgetCategory:
+          type: string
+          example: Groceries
+        budgetAmount:
+          type: number
+          format: double
+          example: 1000.0
+        expenseDescription:
+          type: string
+          example: Monthly groceries
+        expenseAmount:
+          type: number
+          format: double
+          example: 1200.0
