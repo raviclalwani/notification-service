@@ -22,7 +22,6 @@ notification-service/
 │   │   ├── java/com/example/
 │   │   │     ├── controller/
 │   │   │     ├── model/
-│   │   │     ├── repository/
 │   │   │     ├── config/
 │   │   │     └── NotificationServiceApplication.java
 │   │   └── resources/
